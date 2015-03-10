@@ -1,0 +1,13 @@
+# Site settings
+title: George Imura
+email:
+description: ""
+baseurl: ""
+url: "http://georgeimura.com"
+github_username:  dongy7
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+paginate: 5
+exclude: ["node_modules"]

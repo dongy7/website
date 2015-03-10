@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>George Imura</title>
+    <description></description>
+    <link>http://georgeimura.com/</link>
+    <atom:link href="http://georgeimura.com/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Tue, 10 Mar 2015 12:45:54 -0400</pubDate>
+    <lastBuildDate>Tue, 10 Mar 2015 12:45:54 -0400</lastBuildDate>
+    <generator>Jekyll v2.4.0</generator>
+    
+      <item>
+        <title>First Post</title>
+        <description>&lt;p&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 10 Mar 2014 08:00:00 -0400</pubDate>
+        <link>http://georgeimura.com/2014/03/10/first-post/</link>
+        <guid isPermaLink="true">http://georgeimura.com/2014/03/10/first-post/</guid>
+        
+        
+      </item>
+    
+  </channel>
+</rss>
