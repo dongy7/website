@@ -18,6 +18,10 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/clean-blog.css">
 
+    <!-- Chartjs -->
+    <link rel="stylesheet" href="/bower_components/chartist/dist/chartist.min.css" >
+    <script src="/bower_components/chartist/dist/chartist.min.js"></script>
+
     <!-- Custom Fonts -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
@@ -31,6 +35,7 @@
     <![endif]-->
 
 </head>
+
 
 <div class = "overlay">
 <body>
@@ -107,8 +112,22 @@
 			<p>
 Placeholder Graph
 </p>
-<div style="text-align: center;">
-  <img src="/img/graph.png" align="middle" style="width:550px;height:400px">
+<div class="ct-chart ct-perfect-fourth">
+<script>
+var data = {
+  // A labels array that can contain any sort of values
+  labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+  // Our series array that contains series objects or in this case series data arrays
+  series: [
+    [5, 2, 4, 2, 0]
+  ]
+};
+
+// Create a new line chart object where as first parameter we pass in a selector
+// that is resolving to our chart container element. The Second parameter
+// is the actual data object.
+new Chartist.Line('.ct-chart', data);
+</script>
 </div>
 
 		</div>
@@ -164,6 +183,7 @@ Placeholder Graph
     </div>
   </section>
 </footer>
+
 
 <!-- jQuery -->
 <script src="/js/jquery.min.js "></script>
