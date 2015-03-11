@@ -1,13 +1,14 @@
 ---
 layout: page
 description: ""
-header-img: 
+header-img:
 ---
 
 {% for post in paginator.posts %}
 <div class="post-preview">
     <a href="{{ post.url | prepend: site.baseurl }}">
         <h2 class="post-title">
+          <img src= {{post.header-img}} align="middle" class = "img-circle" style="float:left; width:75px;height:75px">
             {{ post.title }}
         </h2>
         {% if post.subtitle %}
@@ -15,6 +16,7 @@ header-img:
             {{ post.subtitle }}
         </h3>
         {% endif %}
+
     </a>
     <p class="post-meta">Posted by {{ post.author }} on {{ post.date | date: "%B %-d, %Y" }}</p>
 </div>

@@ -4,9 +4,13 @@ title:      "Retail Arbitrage - Golden Mario"
 subtitle:   ""
 date:       2014-3-10 12:00:00
 author:     "George Imura"
-header-img: "img/post-bg-01.jpg"
+header-img: "img/mario.jpg"
 ---
-<img src="/img/mario.jpg" align="middle" style="width:304px;height:228px">
+
+<div id="wrapper" style="width:100%; text-align:center">
+<img src="/img/mario.jpg" style="width:304px;height:228px">
+</div>
+
 <p>
 Golden Mario, a gold spray-painted Nintendo ‘amiibo’ figure, sold out within minutes of being released on Walmart’s website.  The retail price for Golden Mario was $12.99 but did not last long.  After 8 minutes, the Nintendo figure was sold out.  Within minutes of being sold out on Walmart’s website, individuals started listing their pre-orders for $99.99 on eBay, which nets a profit spread of about $80 per figure. <br><br>
 
