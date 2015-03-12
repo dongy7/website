@@ -22,6 +22,9 @@
     <link rel="stylesheet" href="/bower_components/chartist/dist/chartist.min.css" >
     <script src="/bower_components/chartist/dist/chartist.min.js"></script>
 
+    <!-- jQuery -->
+    <script src="/js/jquery.min.js "></script>
+
     <!-- Custom Fonts -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
@@ -97,7 +100,7 @@
                 <div class="site-heading">
                     <h1>Stock Data</h1>
                     <hr class="small">
-                    <span class="subheading">Stock Data</span>
+                    <span class="subheading"></span>
                 </div>
             </div>
         </div>
@@ -110,23 +113,91 @@
 	<div class="row">
 		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 			<p>
-Placeholder Graph
+<center><b>NASDAQ-100 Index Values</b></center>
 </p>
 <div class="ct-chart ct-perfect-fourth">
 <script>
-var data = {
-  // A labels array that can contain any sort of values
-  labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
-  // Our series array that contains series objects or in this case series data arrays
-  series: [
-    [5, 2, 4, 2, 0]
-  ]
+
+// returns date in year-month-date format
+function getDate(date) {
+  var dd = date.getDate();
+  var mm = date.getMonth()+1; //January is 0!
+  var yyyy = date.getFullYear();
+
+  if(dd<10) {
+      dd='0'+dd
+  }
+
+  if(mm<10) {
+      mm='0'+mm
+  }
+  return yyyy + '-' + mm + '-' + dd;
+}
+
+//json request url
+var prefix = "https://www.quandl.com/api/v1/datasets/NASDAQOMX/NDX.json?trim_start=";
+var mid = "&trim_end=";
+var suffix = "&auth_token=1DA7DeyRx4GoZViFE8dd";
+
+//get today's and week ago's date
+var today = new Date();
+var oneWeekAgo = new Date();
+oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
+today = getDate(today)
+weekAgo = getDate(oneWeekAgo)
+
+//complete url
+var url = prefix + weekAgo + mid + today + suffix;
+
+console.log(url);
+
+$.getJSON(url, function(data) {
+  console.log(data)
+  var stock = data['data']
+
+  var dates = []  // dates
+  var values = [] // index values
+  for(i = stock.length-1; i >= 0; i--) {
+    dates.push(stock[i][0])
+    values.push(stock[i][1])
+  }
+
+
+  console.log(dates.length)
+  console.log(values.length)
+  var plot = {
+    labels: dates,
+    series: [values]
+  }
+  // We are setting a few options for our chart and override the defaults
+  var options = {
+    // Don't draw the line chart points
+    showPoint: false,
+    // Disable line smoothing
+    lineSmooth: false,
+    // X-Axis specific configuration
+    axisX: {
+      // We can disable the grid for this axis
+      showGrid: true,
+      // and also don't show the label
+      showLabel: true
+    },
+    // Y-Axis specific configuration
+    axisY: {
+      // Lets offset the chart a bit from the labels
+      offset: 60,
+      // The label interpolation function enables you to modify the values
+      // used for the labels on each axis. Here we are converting the
+      // values into million pound.
+      labelInterpolationFnc: function(value) {
+        return '$' + value + 'B';
+      }
+    }
 };
 
-// Create a new line chart object where as first parameter we pass in a selector
-// that is resolving to our chart container element. The Second parameter
-// is the actual data object.
-new Chartist.Line('.ct-chart', data);
+  new Chartist.Line('.ct-chart', plot, options);
+});
+
 </script>
 </div>
 
@@ -184,9 +255,6 @@ new Chartist.Line('.ct-chart', data);
   </section>
 </footer>
 
-
-<!-- jQuery -->
-<script src="/js/jquery.min.js "></script>
 
 <!-- Bootstrap Core JavaScript -->
 <script src="/js/bootstrap.min.js "></script>
