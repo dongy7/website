@@ -6,10 +6,6 @@ header-img:
 ---
 <p> <center><b>NASDAQ-100 Index Values</b></center> </p>
 
-
-
-
-
 <input type="text" id="input" value = "Enter a Company Name" onfocus="if (this.value=='Enter a Company Name') this.value='';"/>
 <input type="submit" id = "btn" value="Submit">
 
@@ -71,7 +67,7 @@ header-img:
 
         var plot = {
           labels: dates,
-          series: [open, high, low, close]
+          series: [{ name: 'Open', data: open}, {name: 'High', data: high}, {name: 'Low', data: low}, {name: 'Close', data: close}]
         }
 
         // var plugins = {
@@ -137,14 +133,18 @@ header-img:
   console.log(url);
 
   $.getJSON(url, function(data) {
-    console.log(data)
-    var stock = data['data']
+    console.log(data);
+    var stock = data['data'];
 
-    var dates = []  // dates
-    var values = [] // index values
+    var dates = [];  // dates
+    var values = []; // index values
+    var high = [];
+    var low = [];
     for(i = stock.length-1; i >= 0; i--) {
-      dates.push(stock[i][0])
-      values.push(stock[i][1])
+      dates.push(stock[i][0]);
+      values.push(stock[i][1]);
+      high.push(stock[i][2]);
+      low.push(stock[i][3]);
     }
 
 
@@ -152,14 +152,14 @@ header-img:
     console.log(values.length)
     var plot = {
       labels: dates,
-      series: [values]
+      series: [values, high, low]
     }
     // We are setting a few options for our chart and override the defaults
     var options = {
       // Don't draw the line chart points
-      showPoint: false,
+      showPoint: true,
       // Disable line smoothing
-      lineSmooth: false,
+      lineSmooth: true,
       // X-Axis specific configuration
       axisX: {
         // We can disable the grid for this axis
