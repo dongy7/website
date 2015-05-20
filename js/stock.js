@@ -117,7 +117,7 @@
   //complete url
   var url = prefix + weekAgo + mid + today + suffix;
 
-  console.log(url);
+  //console.log(url);
 
   $.getJSON(url, function(data) {
     console.log(data);
