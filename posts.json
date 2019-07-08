@@ -1,19 +1,9 @@
 {
   "posts": [
     {
-      "id": "fun-with-circuits",
-      "date": "January 7, 2017",
-      "title": "Fun with Circuits"
-    },
-    {
-      "id": "complex-data-fetching-made-simple-with-rx",
-      "date": "June 24, 2017",
-      "title": "Complex Data Fetching Made Simple With Rx"
-    },
-    {
-      "id": "integrating-markdown-in-react-with-mdx",
-      "date": "May 4, 2018",
-      "title": "Integrating Markdown in React with MDX"
+      "id": "retail-arbitrage-with-golden-mario",
+      "date": "March 10, 2015",
+      "title": "Retail Arbitrage with Golden Mario"
     }
   ]
 }
