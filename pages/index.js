@@ -27,7 +27,9 @@ const H1 = styled.h1`
   font-weight: normal;
 `
 
-const Nav = styled.nav`margin-top: 20px;`
+const Nav = styled.nav`
+  margin-top: 20px;
+`
 
 const A = styled.a`
   display: inline-block;
@@ -39,20 +41,16 @@ const AvDiv = styled.div`
   margin-top: 20px;
 `
 
-export default () =>
+export default () => (
   <Page>
     <Head>
-      <title>Dong Yeop Lee</title>
+      <title>George Imura</title>
     </Head>
     <Home>
       <Main>
-        <H1>Dong Yeop Lee</H1>
+        <H1>George Imura</H1>
         <AvDiv>
-          <Avatar
-            width={100}
-            height={100}
-            url="static/avatar.jpg"
-          />
+          <Avatar width={100} height={100} url="static/avatar.jpg" />
         </AvDiv>
         <Nav>
           <Link prefetch href="/projects">
@@ -61,8 +59,9 @@ export default () =>
           <Link prefetch href="/posts">
             <A>Posts</A>
           </Link>
-          <A href="mailto:dong@dongyeop.com">Email</A>
+          <A href="mailto:georgeimura1@gmail.com">Email</A>
         </Nav>
       </Main>
     </Home>
   </Page>
+)
