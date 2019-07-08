@@ -28,17 +28,12 @@ export default ({ children, project }) => {
         </LeftNav>
         <RightNav>
           <Link>
-            <NavLink href="https://github.com/dongy7/">
-              <i className="fab fa-github fa-lg"></i>
-            </NavLink>
-          </Link>
-          <Link>
-            <NavLink href="https://www.linkedin.com/in/dongy7/">
+            <NavLink href="https://www.linkedin.com/in/georgeimura/">
               <i className="fab fa-linkedin fa-lg"></i>
             </NavLink>
           </Link>
           <Link>
-            <NavLink href="mailto:dongy7@gmail.com">
+            <NavLink href="mailto:georgeimura1@gmail.com">
               <i className="fas fa-envelope fa-lg"></i>
             </NavLink>
           </Link>
