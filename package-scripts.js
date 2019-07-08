@@ -2,7 +2,7 @@ const ghpages = require('gh-pages')
 const npUtils = require('nps-utils')
 const series = npUtils.series
 
-const publish = function (src, branch) {
+const publish = function(src, branch) {
   const date = new Date().toISOString()
   const options = {
     branch: branch,
@@ -10,7 +10,7 @@ const publish = function (src, branch) {
     message: `New build on ${date}.`
   }
 
-  ghpages.publish(src, options, (err) => {
+  ghpages.publish(src, options, err => {
     if (err) {
       console.error(err)
     }
@@ -28,9 +28,7 @@ module.exports = {
       )
     },
     publish: {
-      default: series(
-        publish('out', 'master')
-      )
+      default: series(publish('out', 'gh-pages'))
     }
   }
 }

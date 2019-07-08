@@ -1,4 +1,6 @@
-![Golden Mario Amiibo](https://cdn.gamerant.com/wp-content/uploads/Gold-Mario-Amiibo-Price-and-Release-Date.jpg.optimal.jpg)
+import Image from '../../components/post/Image'
+
+<Image src="https://cdn.gamerant.com/wp-content/uploads/Gold-Mario-Amiibo-Price-and-Release-Date.jpg.optimal.jpg" />
 
 Gold Mario, a gold painted Nintendo ‘amiibo’ figure, sold out within 10 minutes of being released on Walmart’s website on March 10, 2015. Within minutes of being sold out on Walmart’s website, individuals started listing their pre-orders for $99.99 on eBay, netting a profit spread of about $80 per figure.
 
